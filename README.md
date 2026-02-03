@@ -1,6 +1,6 @@
-# 📘 AI Study Plan Generator & Tracker
+# AI Study Plan Generator & Tracker
 
-## 🔍 Project Overview
+## Project Overview
 The **AI Study Plan Generator & Tracker** is a web-based application that helps users create a personalized study plan based on their learning goal, available time, and study preferences.  
 The system not only generates a structured plan but also allows users to **track daily progress**, visualize completion status, and adjust study behavior over time.
 
@@ -8,7 +8,7 @@ The project focuses on **planning, execution, and tracking**, rather than skill 
 
 ---
 
-## 🎯 Key Objectives
+## Key Objectives
 - Generate realistic, goal-oriented study plans
 - Support different learning intents:
   - Exam preparation
@@ -20,7 +20,7 @@ The project focuses on **planning, execution, and tracking**, rather than skill 
 
 ---
 
-## 🚀 Features
+## Features
 
 ### Core Features
 - **Goal Definition**
@@ -49,7 +49,7 @@ The project focuses on **planning, execution, and tracking**, rather than skill 
 
 ---
 
-## 🧠 AI Integration Strategy
+## AI Integration Strategy
 
 ### Primary Planner
 - Uses **Hugging Face Inference Providers (Router API)** with an instruction-tuned chat model
@@ -67,7 +67,7 @@ This hybrid approach ensures **reliability, explainability, and robustness**.
 
 ---
 
-## 🧩 Plan Generation Logic
+## Plan Generation Logic
 1. User provides:
    - Goal / subject
    - Goal type
@@ -86,7 +86,7 @@ This hybrid approach ensures **reliability, explainability, and robustness**.
 
 ---
 
-## 📊 Progress Tracking Mechanism
+## Progress Tracking Mechanism
 - Each task has a status: `pending` or `done`
 - Progress percentage: (Completed Tasks / Total Tasks) × 100
 - Weekly progress is calculated independently
@@ -97,7 +97,7 @@ This hybrid approach ensures **reliability, explainability, and robustness**.
 
 ---
 
-## 🗂️ Tech Stack
+## Tech Stack
 - **Frontend:** Streamlit
 - **Backend:** Python
 - **AI / NLP:** Hugging Face Inference Providers (Chat Models)
@@ -106,22 +106,22 @@ This hybrid approach ensures **reliability, explainability, and robustness**.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 study-plan-generator/
-│
-├── app.py # Main Streamlit app
-├── db.py # Database connection
-├── models.py # Database models & queries
-├── planner_hf.py # Hugging Face planner
-├── planner_fallback.py # Rule-based fallback planner
-├── progress.py # Progress calculations
-├── requirements.txt # Dependencies
-├── README.md # Project documentation
-└── .gitignore
+├── app.py                  # Main Streamlit app
+├── db.py                   # Database connection
+├── models.py               # Database models & queries
+├── planner_hf.py           # Hugging Face planner
+├── planner_fallback.py     # Rule-based fallback planner
+├── progress.py             # Progress calculations
+├── requirements.txt        # Project dependencies
+├── README.md               # Project documentation
+└── .gitignore              # Git ignore rules
+
 
 ---
 
-## ▶️ How to Run Locally
+## How to Run Locally
 1. Clone the repository
 2. Create and activate a Python environment
 3. Install dependencies: pip install -r requirements.txt
@@ -130,14 +130,14 @@ study-plan-generator/
 
 ---
 
-## 🌐 Deployment
+## Deployment
 The application is deployed on **Streamlit Community Cloud**.
 
 > Hugging Face tokens are securely stored using Streamlit Secrets.
 
 ---
 
-## 👤 Sample User Journey
+## Sample User Journey
 1. User enters goal: *“Python for Data Science”*
 2. Selects goal type: *Skill / Topic Completion*
 3. Chooses duration and weekly availability
@@ -148,13 +148,14 @@ The application is deployed on **Streamlit Community Cloud**.
 
 ---
 
-## 📌 Notes
+## Notes
 - The application supports **one active plan at a time** for simplicity and clarity
 - SQLite storage is sufficient for demos and academic evaluation
 - The architecture is extensible for multi-user or persistent storage if required
 
 ---
 
-## ✅ Conclusion
+## Conclusion
 This project demonstrates how AI-assisted planning combined with traditional rule-based logic can create a **reliable, user-friendly, and practical learning assistant**, suitable for both academic and real-world learning scenarios.
+
 
