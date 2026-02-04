@@ -18,7 +18,7 @@ from progress import compute_days_left, compute_status
 st.set_page_config(page_title="Study Plan Generator & Tracker", layout="wide")
 init_db()
 
-st.title("📘 AI Study Plan Generator & Tracker (Hugging Face)")
+st.title("AI Study Plan Generator & Tracker (Hugging Face)")
 
 if "plan_id" not in st.session_state:
     st.session_state.plan_id = get_latest_plan_id()
@@ -154,23 +154,23 @@ def convert_plan_to_tasks(ai_plan, start_date: date, duration_days: int, intensi
 
     return tasks
 
-tab1, tab2, tab3, tab4 = st.tabs(["🧩 Create Plan", "✅ Tasks", "📊 Dashboard", "📅 Full Plan"])
+tab1, tab2, tab3, tab4 = st.tabs(["Create Plan", "Tasks", "Dashboard", "Full Plan"])
 
 with tab1:
     st.subheader("Create your personalized study plan")
 
     colR1, colR2 = st.columns([1, 3])
     with colR1:
-        if st.button("🗑️ Start New Plan (Reset)", use_container_width=True):
+        if st.button("Start New Plan (Reset)", use_container_width=True):
             reset_all_data()
             st.session_state.plan_id = None
-            st.success("Old plan cleared. Create a new plan now ✅")
+            st.success("Old plan cleared. Create a new plan now")
 
     col1, col2 = st.columns(2)
 
     with col1:
         goal_type = st.selectbox("Goal type", ["Exam preparation", "Skill/topic completion", "Certification"], index=0)
-        goal = st.text_input("Learning goal / Subject", placeholder="e.g., CDS History / SQL / Python")
+        goal = st.text_input("Learning goal / Subject", placeholder="e.g., Indian History / SQL / Python")
         start_date = st.date_input("Start date", value=date.today())
         duration_days = st.number_input("Duration (days)", min_value=7, max_value=365, value=30, step=1)
 
@@ -184,7 +184,7 @@ with tab1:
         intensity = st.selectbox("Study intensity", ["light", "moderate", "intensive"], index=1)
         learning_pref = st.selectbox("Learning preference", ["reading", "practice", "mixed"], index=2)
 
-    if st.button("🚀 Generate Plan", use_container_width=True):
+    if st.button("Generate Plan", use_container_width=True):
         if not goal.strip():
             st.error("Please enter a learning goal/subject.")
         else:
@@ -213,7 +213,7 @@ with tab1:
                 ai_error = str(e)
                 ai_plan = generate_plan_fallback(goal_for_ai, int(duration_days), intensity=intensity)
 
-            st.caption(f"🧠 Planner used: **{planner_used}**")
+            st.caption(f"Planner used: **{planner_used}**")
             if ai_error:
                 st.caption(f"⚠️ AI error (why fallback): {ai_error[:180]}")
 
@@ -228,9 +228,9 @@ with tab1:
 
             add_tasks(plan_id, tasks)
 
-            st.success("✅ Plan created successfully!")
+            st.success("Plan created successfully!")
 
-            st.write("### ✅ Plan Preview (First 10 Tasks)")
+            st.write("### Plan Preview (First 10 Tasks)")
             for t in tasks[:10]:
                 st.write(f"- {t['task_date']} | Week {t['week_no']} | {t['title']} (~{t['estimated_minutes']} mins)")
 
@@ -300,7 +300,7 @@ with tab3:
             st.progress(int(wp))
 
 with tab4:
-    st.subheader("📅 Full Plan")
+    st.subheader("Full Plan")
 
     if not st.session_state.plan_id:
         st.warning("Create a plan first in the **Create Plan** tab.")
