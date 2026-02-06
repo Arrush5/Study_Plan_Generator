@@ -108,14 +108,23 @@ This hybrid approach ensures **reliability, explainability, and robustness**.
 
 ## Project Structure
 study-plan-generator
+
 ├── app.py                  # Main Streamlit app
+
 ├── db.py                   # Database connection
+
 ├── models.py               # Database models & queries
+
 ├── planner_hf.py           # Hugging Face planner
+
 ├── planner_fallback.py     # Rule-based fallback planner
+
 ├── progress.py             # Progress calculations
+
 ├── requirements.txt        # Project dependencies
+
 ├── README.md               # Project documentation
+
 └── .gitignore              # Git ignore rules
 
 ---
@@ -156,6 +165,7 @@ The application is deployed on **Streamlit Community Cloud**.
 
 ## Conclusion
 This project demonstrates how AI-assisted planning combined with traditional rule-based logic can create a **reliable, user-friendly, and practical learning assistant**, suitable for both academic and real-world learning scenarios.
+
 
 
 
